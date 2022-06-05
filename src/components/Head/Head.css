@@ -1,0 +1,67 @@
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  float: left;
+  padding: 0 15px;
+}
+
+.menu li:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.menu li a {
+  color: black;
+  font-size: 14px;
+}
+
+.logo {
+  display: flex;
+}
+
+.logo:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.logo img {
+  width: 80px;
+}
+
+.menu-options {
+  display: flex;
+}
+
+.header-item {
+  padding: 0 16px;
+  font-size: 16px;
+  color: black;
+}
+
+.wallet-btn {
+  padding: 0 16px;
+  margin: auto 0;
+  font-weight: 700;
+  margin-left: 20px;
+  background-color: #18c683;
+  border: none;
+}
+
+.wallet-btn:hover {
+  transform: translateY(-2px);
+  background-color: #18c683;
+}
+
+.ant-btn-round.ant-btn-lg {
+  height: 36px;
+  padding: 0px 18px;
+}

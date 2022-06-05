@@ -1,5 +1,8 @@
-.App {
-  text-align: center;
+@import "~antd/dist/antd.css";
+
+.ant-layout-header {
+  background-color: white;
+  padding: 0 13%;
 }
 
 .App-logo {
