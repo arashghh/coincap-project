@@ -4,6 +4,7 @@ import "./App.css";
 import { Layout } from "antd";
 import UserContext from "./context/UserContext";
 import Head from "./components/Head";
+import ContentBox from "./components/ContentBox";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -28,6 +29,9 @@ function App() {
             <Header>
               <Head />
             </Header>
+            <Content>
+              <ContentBox />
+            </Content>
           </Layout>
         </Router>
       </UserContext.Provider>
