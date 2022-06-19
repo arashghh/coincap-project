@@ -8,7 +8,10 @@ import ContentBox from "./components/ContentBox";
 import CoinTabel from "./components/CoinTabel";
 import ExchangeTabel from "./components/ExchangeTabel";
 import axios from "axios";
+<<<<<<< HEAD
 import Footer from "./components/Footer";
+=======
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
 
 const { Header, Sider, Content } = Layout;
 

@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { Table } from "antd";
 import CoinContext from "../../context/CoinContext";
+<<<<<<< HEAD
 import "../../Table.scss";
+=======
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
 
 export default function CoinTabel() {
   let coinsData = useContext(CoinContext);
@@ -11,8 +14,13 @@ export default function CoinTabel() {
   }
 
   //--------------------------------------------------//
+<<<<<<< HEAD
   // data that we call in table
 
+=======
+
+  // data that we call in table
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
   const data = coinsData?.map(myfunction);
 
   function myfunction(coin) {
@@ -41,13 +49,17 @@ export default function CoinTabel() {
 
       changeCondition:
         parseFloat(coin.changePercent24Hr) > 0 ? "gColor" : "rColor",
+<<<<<<< HEAD
       // if coin's change be positive, it will be gColor(means green color) and ...
+=======
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
     };
 
     return finalObject;
   }
 
   //--------------------------------------------------//
+<<<<<<< HEAD
   // column's data
   // like the title and width and ...
 
@@ -61,6 +73,20 @@ export default function CoinTabel() {
         compare: (a, b) => a.key - b.key,
         multiple: 1,
       }, // use to sort column's data
+=======
+
+  // columns data like the title and width and etc
+  const columns = [
+    {
+      title: "Rank",
+      dataIndex: "key",
+      width: 30,
+      align: "center",
+      sorter: {
+        compare: (a, b) => a.key - b.key,
+        multiple: 1,
+      },
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
     },
     {
       title: "Name",
@@ -143,11 +169,17 @@ export default function CoinTabel() {
   //--------------------------------------------------//
 
   const onChange = (pagination, filters, sorter, extra) => {
+<<<<<<< HEAD
     console.log("params:", pagination, filters, sorter, extra);
   };
 
   //--------------------------------------------------//
 
+=======
+    console.log("params", pagination, filters, sorter, extra);
+  };
+
+>>>>>>> cc526fab053c56f02a14080684d2f7fb91c6b80d
   return (
     <div className='tables'>
       <Table
