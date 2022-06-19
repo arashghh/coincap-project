@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Layout } from "antd";
-import UserContext from "./context/UserContext";
+import CoinContext from "./context/CoinContext";
 import Head from "./components/Head";
 import ContentBox from "./components/ContentBox";
+import CoinTabel from "./components/CoinTabel";
+import ExchangeTabel from "./components/ExchangeTabel";
+import axios from "axios";
 
 const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
-  const [user, setUser] = useState({
-    id: 1,
-    name: "Mario",
-  });
+  const [coinsData, setCoinsData] = useState();
+
+  useEffect(() => {
+    axios.get("https://api.coincap.io/v2/assets").then((response) => {
+      setCoinsData(response);
+    });
+  }, []);
+
+  /////////////////////////////////////////////////////
 
   const [current, setCurrent] = useState(3);
 
   const onChange = (current) => {
-    console.log(current);
     setCurrent(current);
   };
 
+  /////////////////////////////////////////////////////
+
   return (
     <div className='App'>
-      <UserContext.Provider value={user}>
+      <CoinContext.Provider value={coinsData}>
         <Router>
           <Layout>
             <Header>
@@ -31,10 +40,14 @@ function App() {
             </Header>
             <Content>
               <ContentBox />
+              <Routes>
+                <Route path='/' element={<CoinTabel />} />
+                <Route path='/exchanges' element={<ExchangeTabel />} />
+              </Routes>
             </Content>
           </Layout>
         </Router>
-      </UserContext.Provider>
+      </CoinContext.Provider>
     </div>
   );
 }
