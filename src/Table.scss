@@ -1,0 +1,48 @@
+.tables {
+  width: 75%;
+  margin: auto;
+  margin-top: -110px;
+}
+
+.ant-table {
+  font-size: 12px;
+
+  &-column-sorter {
+    display: none;
+  }
+
+  &-cell {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &-thead {
+    tr {
+      th {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.gColor {
+  color: green;
+}
+
+.rColor {
+  color: red;
+}
+
+.coin-name-box {
+  img {
+    width: 40px;
+    float: left;
+    padding-right: 5px;
+  }
+
+  .coin-name {
+    float: left;
+    font-size: 9px;
+    line-height: 12px;
+  }
+}

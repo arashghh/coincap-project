@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Table } from "antd";
 import CoinContext from "../../context/CoinContext";
+import "../../Table.scss";
 
 export default function CoinTabel() {
   let coinsData = useContext(CoinContext);
@@ -10,8 +11,8 @@ export default function CoinTabel() {
   }
 
   //--------------------------------------------------//
-
   // data that we call in table
+
   const data = coinsData?.map(myfunction);
 
   function myfunction(coin) {
@@ -40,24 +41,26 @@ export default function CoinTabel() {
 
       changeCondition:
         parseFloat(coin.changePercent24Hr) > 0 ? "gColor" : "rColor",
+      // if coin's change be positive, it will be gColor(means green color) and ...
     };
 
     return finalObject;
   }
 
   //--------------------------------------------------//
+  // column's data
+  // like the title and width and ...
 
-  // columns data like the title and width and etc
   const columns = [
     {
-      title: "Rank",
-      dataIndex: "key",
-      width: 30,
-      align: "center",
+      title: "Rank", // what will be appear in table
+      dataIndex: "key", // use to get 'key' from data array
+      width: 30, // width of the column
+      align: "center", // align of the data in column
       sorter: {
         compare: (a, b) => a.key - b.key,
         multiple: 1,
-      },
+      }, // use to sort column's data
     },
     {
       title: "Name",
@@ -140,8 +143,10 @@ export default function CoinTabel() {
   //--------------------------------------------------//
 
   const onChange = (pagination, filters, sorter, extra) => {
-    console.log("params", pagination, filters, sorter, extra);
+    console.log("params:", pagination, filters, sorter, extra);
   };
+
+  //--------------------------------------------------//
 
   return (
     <div className='tables'>

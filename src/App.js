@@ -8,8 +8,9 @@ import ContentBox from "./components/ContentBox";
 import CoinTabel from "./components/CoinTabel";
 import ExchangeTabel from "./components/ExchangeTabel";
 import axios from "axios";
+import Footer from "./components/Footer";
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 function App() {
   const [coinsData, setCoinsData] = useState();
@@ -45,6 +46,7 @@ function App() {
                 <Route path='/exchanges' element={<ExchangeTabel />} />
               </Routes>
             </Content>
+            <Footer />
           </Layout>
         </Router>
       </CoinContext.Provider>
@@ -53,14 +55,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <Content>
-              <Routes>
-                <Route path='/' />
-                
-                <Route path='/exchange' />
-              </Routes>
-            </Content>
-            <Footer>Footer</Footer> */
-}
