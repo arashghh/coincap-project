@@ -43,6 +43,16 @@
   .coin-name {
     float: left;
     font-size: 9px;
-    line-height: 12px;
+    line-height: 16px;
+    a {
+      h2 {
+        font-size: 14px;
+        color: black;
+      }
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: black;
+      }
+    }
   }
 }

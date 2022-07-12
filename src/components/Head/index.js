@@ -1,10 +1,39 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "antd";
 import { SearchOutlined, SettingOutlined } from "@ant-design/icons";
-import "./Head.css";
+import "./Head.scss";
 
 export default function Head() {
+  const [keyword, setKeyword] = useState("");
+  const [searchBoxInput, setSearchBoxInput] = useState(true);
+
+  const navigate = useNavigate();
+
+  function searchSubmit(e) {
+    e.preventDefault();
+    navigate(`/search?keyword=${keyword}`);
+    console.log("Search keyword: ", keyword);
+    localStorage.setItem("searchKeyword", keyword);
+    setSearchBoxInput(true);
+    setKeyword("");
+  }
+
+  function searchOnChange(e) {
+    setKeyword(e.target.value);
+  }
+
+  function searchBoxInputVisibility() {
+    if (searchBoxInput) {
+      // document.getElementById("searchInput").style.display = "none";
+      setSearchBoxInput(false);
+    } else {
+      // document.getElementById("searchInput").style.display = "block";
+      // document.getElementById("searchInput").style.border = "solid 2px black";
+      setSearchBoxInput(true);
+    }
+  }
+
   return (
     <div className='header'>
       {/* Menu with links */}
@@ -27,9 +56,32 @@ export default function Head() {
 
       {/* search box and setting and connect wallet button */}
       <div className='menu-options'>
-        <Link to='/' className='header-item'>
-          <SearchOutlined />
-        </Link>
+        <div className='search-box'>
+          <form action='#' className='search-box-form' onSubmit={searchSubmit}>
+            <input
+              type='text'
+              className='search-box-form-input'
+              name='search'
+              id='searchInput'
+              placeholder='Search...'
+              value={keyword}
+              onChange={searchOnChange}
+              autoComplete={"off"}
+              style={
+                searchBoxInput
+                  ? { display: "none" }
+                  : { display: "block", border: "solid 2px black" }
+              }
+            />
+            <span
+              className='search-box-form-input-btn'
+              onClick={searchBoxInputVisibility}
+            >
+              <SearchOutlined />
+            </span>
+          </form>
+        </div>
+
         <Link to='/' className='header-item'>
           <SettingOutlined />
         </Link>
@@ -44,4 +96,10 @@ export default function Head() {
       </div>
     </div>
   );
+}
+
+{
+  /* <button type='submit' className='search-box-form-btn' onClick={submit}>
+  <SearchOutlined />
+</button>; */
 }
