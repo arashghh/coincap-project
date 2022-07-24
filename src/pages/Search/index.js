@@ -15,7 +15,7 @@ export default function Search() {
     setKeyword(searchKeyword);
   }, [search]);
 
-  const resultSearch = coinsData.data.data.filter((item) => {
+  const resultSearch = coinsData.filter((item) => {
     if (item.id === keyword) {
       return item;
     } else if (item.symbol === keyword.toUpperCase()) {
