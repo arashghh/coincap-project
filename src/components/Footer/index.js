@@ -7,6 +7,7 @@ export default function Footer() {
   return (
     <div className='footer-box'>
       <div className='footer-box-content'>
+        {/* first column from left */}
         <div className='column'>
           <h3 className='column-head'>COINCAP.IO</h3>
           <div>
@@ -29,6 +30,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+        {/* second column from left */}
         <div className='column'>
           <h3 className='column-head'>LEGALS</h3>
           <div>
@@ -48,6 +50,7 @@ export default function Footer() {
             CoinMarketCap, LLC or any of its goods and services.
           </p>
         </div>
+        {/* third column from left */}
         <div className='column'>
           <h3 className='column-head'>FOLLOW US</h3>
           <div>
@@ -59,6 +62,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
+        {/* fourth column from left */}
         <div className='column'>
           <h3 className='column-head'>COINCAP APP AVAILABLE ON</h3>
           <img

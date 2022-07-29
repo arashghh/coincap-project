@@ -25,11 +25,8 @@ export default function Head() {
 
   function searchBoxInputVisibility() {
     if (searchBoxInput) {
-      // document.getElementById("searchInput").style.display = "none";
       setSearchBoxInput(false);
     } else {
-      // document.getElementById("searchInput").style.display = "block";
-      // document.getElementById("searchInput").style.border = "solid 2px black";
       setSearchBoxInput(true);
     }
   }
@@ -96,10 +93,4 @@ export default function Head() {
       </div>
     </div>
   );
-}
-
-{
-  /* <button type='submit' className='search-box-form-btn' onClick={submit}>
-  <SearchOutlined />
-</button>; */
 }

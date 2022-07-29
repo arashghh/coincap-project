@@ -8,10 +8,6 @@ import { Link } from "react-router-dom";
 export default function CoinTabel() {
   let coinsData = useContext(CoinContext);
 
-  // if (coinsData !== undefined) {
-  //   coinsData = coinsData.data.data;
-  // }
-
   //--------------------------------------------------//
   // data that we call in table
 
@@ -72,7 +68,7 @@ export default function CoinTabel() {
       symbolUrl: "symbolUrl",
       render: (text, data) => (
         <div className='coin-name-box'>
-          <img src={data.symbolUrl} alt={data.symbolUrl} />
+          <img src={data.symbolUrl} alt={data.symbol} />
           <div className='coin-name'>
             <Link to={`/assets?${data.symbol}`}>
               <h2>{data.name}</h2>

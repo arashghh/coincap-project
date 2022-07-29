@@ -4,12 +4,6 @@
     display: flex;
     align-content: center;
     height: 200px;
-    background-image: linear-gradient(
-      to right,
-      rgb(63, 81, 181),
-      rgb(100, 181, 246)
-    );
-    border: 1px solid black;
   }
   &-flag {
     width: 65px;
@@ -25,11 +19,9 @@
     h2 {
       font-size: 35px;
       margin: 0;
-      color: white;
     }
 
     h5 {
-      color: white;
       font-weight: 600;
       font-size: 15px;
       margin-top: 10px;
@@ -42,11 +34,9 @@
       margin: auto 0;
       line-height: 2.5rem;
       h1 {
-        color: white;
         font-size: 30px;
       }
       h2 {
-        color: white;
         font-size: 30px;
       }
     }
@@ -56,11 +46,8 @@
       flex-wrap: wrap;
       align-content: space-around;
       line-height: 1rem;
-      h3 {
-        color: white;
-      }
+
       h4 {
-        color: white;
         font-weight: 700;
         font-size: 17px;
       }

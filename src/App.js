@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
 import { Layout } from "antd";
 import CoinContext from "./context/CoinContext";
 import Head from "./components/Head";
@@ -10,16 +9,15 @@ import axios from "axios";
 import Footer from "./components/Footer";
 import Search from "./pages/Search";
 import CoinInfo from "./pages/CoinInfo";
+import "./App.css";
 
 const { Header, Sider, Content } = Layout;
 
 function App() {
   const [coinsData, setCoinsData] = useState();
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const getCoinsData = async () => {
-    setLoading(true);
     await axios
       .get("https://api.coincap.io/v2/assets")
       .then((response) => {
@@ -29,9 +27,6 @@ function App() {
       .catch((error) => {
         setError(error.message);
         console.log("Error: ", error.message);
-      })
-      .finally(() => {
-        setLoading(false);
       });
   };
 

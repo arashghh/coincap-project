@@ -6,11 +6,8 @@ import "./CoinInfo.scss";
 export default function CoinInfo() {
   const coinsData = useContext(CoinContext);
   const [selectedCoin, setSelectedCoin] = useState();
-  const [coinChangeColor, setCoinChangeColor] = useState("");
-  // const [coinData, setCoinData] = useState();
 
   const date = new Date();
-  console.log("date is: ", date);
 
   const months = [
     "January",
@@ -38,23 +35,6 @@ export default function CoinInfo() {
       return item;
     }
   });
-
-  if (findedCoin) {
-    console.log(findedCoin);
-    console.log(findedCoin[0]?.changePercent24Hr);
-  } else {
-    console.log("Coin Not Found");
-  }
-
-  useEffect(() => {
-    if (Math.sign(findedCoin[0]?.changePercent24Hr) === -1) {
-      setCoinChangeColor("red");
-      console.log("reddddddddd");
-    } else {
-      setCoinChangeColor("green");
-      console.log("greennnnnnn", Math.sign(findedCoin[0]?.changePercent24Hr));
-    }
-  }, []);
 
   const coinImageUrl = `https://assets.coincap.io/assets/icons/${selectedCoin}@2x.png`;
 
